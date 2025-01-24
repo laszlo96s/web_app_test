@@ -22,9 +22,10 @@ COPY default.conf /etc/nginx/conf.d/
 
 # Copy the HTML file to the Nginx root directory
 COPY index.html /usr/share/nginx/html/
-
+```
 ### nginx - default.conf:
 
+```nginx
 server {
     listen 8060;
     server_name localhost;
@@ -34,9 +35,11 @@ server {
         index index.html;
     }
 }
+```
 
 ### index.html:
 
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,9 +49,11 @@ server {
     <h1>Hello World</h1>
 </body>
 </html>
+```
 
 ### docker-compose.yml:
 
+```yml
 version: '3'
 services:
   web:
@@ -58,6 +63,7 @@ services:
     ports:
       - "8080:8060"
     command: ["nginx", "-g", "daemon off;"]
+```
 
 ## Step 2: Building the docker image from .dockerfile:
 

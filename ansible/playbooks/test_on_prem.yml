@@ -1,0 +1,25 @@
+- name: Setting up Ubuntu server
+  hosts: raspberry_pi
+  become: true
+  roles:
+    - role: docker
+      tags: ['docker']
+    - role: docker_compose
+      tags: ['docker_compose']
+    - role: git
+      tags: ['git']
+      
+  tasks:
+
+    - name: Check Docker Compose installation
+      command: docker compose version
+      register: docker_compose_check
+      ignore_errors: yes  # Ignore error if docker-compose is not found
+
+    - name: Start Docker Compose in the cloned project directory
+      command: docker compose up -d
+      args:
+        chdir: "{{ git_repo_path }}"
+      when: docker_compose_check.rc == 0
+      become: yes
+

@@ -1,0 +1,25 @@
+---
+- name: Update APT package index
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install Git
+  apt:
+    name: git
+    state: present
+
+- name: Create directory for the Git repository
+  file:
+    path: "{{ git_repo_path }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: '0755'
+
+- name: Clone the Git repository
+  git:
+    repo: "https://{{ git_pat }}@github.com/laszlo96s/web_app_test.git"
+    dest: "{{ git_repo_path }}"
+    version: "{{ git_branch }}"
+    force: yes

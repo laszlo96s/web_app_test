@@ -1,3 +1,33 @@
+# Project Overview
+
+This project repository is  created for tracking my work progress for Commsignia DevOps Exercise.
+It demonstrates a complete DevOps workflow, including infrastructure automation, containerization, and orchestration.
+
+## Project Structure
+
+
+```
+ansible/
+docker-compose.yml
+index.html
+logs/
+minikube/
+nginx.conf
+parse_logs.sh
+readme.md
+start.sh
+web_app.dockerfile
+```
+- **ansible/**: Contains Ansible playbook and roles [docker, docker_compose, git] for setting up the infrastructure.
+- **docker-compose.yml**: Docker Compose file to build and run the Nginx web server.
+- **index.html**: Static HTML page served by Nginx.
+- **logs/**: Directory for persistent log storage for Nginx (attached by Docker Compose).
+- **minikube/**: Local Kubernetes configuration files for deploying the application on Minikube [deployment, service, configmap, ingress].
+- **nginx.conf**: Custom Nginx configuration file.
+- **parse_logs.sh**: Script to parse and analyze Nginx access logs.
+- **start.sh**: Script to start Nginx in the Docker container.
+- **web_app.dockerfile**: Dockerfile to build the Nginx web server image.
+
 # Building and running this docker compose project
 
 This is an overview on how to build and run this docker compose project that sets up an Nginx server to serve a static HTML page.

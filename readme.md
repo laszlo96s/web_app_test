@@ -73,10 +73,10 @@ server {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello World</title>
+    <title>Hello DevOps</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>Hello DevOps</h1>
 </body>
 </html>
 ```
@@ -109,4 +109,4 @@ use -d (detached mode), if you don't want the output to be logged out to the ter
 
 ## Step 4: Access the application
 
-Open your web browser and navigate to http://localhost:8080 to see your "Hello World" page served by Nginx.
+Open your web browser and navigate to http://localhost:8080 to see your "Hello DevOps" page served by Nginx.

@@ -1,11 +1,13 @@
-# Use the official Nginx image from the Docker Hub
-FROM nginx:alpine
+FROM nginx:latest
 
-# Copy the custom Nginx configuration file
-COPY default.conf /etc/nginx/conf.d/
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy the HTML file to the Nginx root directory
-COPY index.html /usr/share/nginx/html/
+COPY index.html /usr/share/nginx/html/index.html
 
-# Expose port 8080
-EXPOSE 8080
+EXPOSE 80
+
+COPY start.sh /start.sh
+
+RUN chmod +x start.sh
+
+ENTRYPOINT ["/start.sh"]

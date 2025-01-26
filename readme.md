@@ -1,7 +1,6 @@
 # Project Overview
 
-This project repository is  created for tracking my work progress for Commsignia DevOps Exercise.
-It demonstrates a complete DevOps workflow, including infrastructure automation, containerization, and orchestration.
+This project demonstrates a complete DevOps workflow, including infrastructure automation, containerization, and orchestration.
 
 Ansible commands tested on Raspberry Pi 3 as Ansible host (Ubuntu server 22.04) with Ubuntu 22.04 Virtual Machine (Virtualbox) as Ansible control node.
 
